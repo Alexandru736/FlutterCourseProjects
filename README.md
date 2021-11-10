@@ -1,7 +1,7 @@
-# FlutterCourseProjects
+# Weekly_homeworks
 
-GitHub repository to store the homeworks and projects done during the Google Flutter Course.
+FlutterCourse homeworks.
 
-Homeworks included here are:
-* Homework1
-* Homework2
+So far, I have done:
+* Homework1 - Currency convertor
+* Homework2 - Guess my number
