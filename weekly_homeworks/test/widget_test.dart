@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:weekly_homeworks/WeeklyHomeworks/Homework1/homework1.dart';
-import 'package:weekly_homeworks/WeeklyHomeworks/Homework2/homework2.dart';
+import 'package:weekly_homeworks/WeeklyHomeworks/Homework2/Homework2_1/homework2.dart';
 
 import 'package:weekly_homeworks/main.dart';
 
