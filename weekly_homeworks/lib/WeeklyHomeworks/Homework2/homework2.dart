@@ -44,106 +44,105 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: const Color(0xff3d9b9b),
       ),
       backgroundColor: Color(0xffF5F5F5),
-      body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(top: 16.0),
-              child: Text(
-                guessText,
-                style:
-                    const TextStyle(fontSize: 27.0, color: Color(0xff757575)),
-                textAlign: TextAlign.center,
-              ),
+      body: ListView(
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(top: 16.0),
+            child: Text(
+              guessText,
+              style:
+                  const TextStyle(fontSize: 27.0, color: Color(0xff757575),),
+              textAlign: TextAlign.center,
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 20.0),
-              child: Text(
-                turnText,
-                style:
-                    const TextStyle(fontSize: 19.0, color: Color(0xff757575)),
-              ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 20.0),
+            child: Text(
+              turnText,
+              style:
+                  const TextStyle(fontSize: 19.0, color: Color(0xff757575)),
+              textAlign: TextAlign.center,
             ),
-            Padding(
-                padding: const EdgeInsets.only(top: 10.0),
-                child: showCompareText
-                    ? Text(
-                        compareText,
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          fontSize: 37.0,
-                          color: Color(0xff757575),
+          ),
+          Padding(
+              padding: const EdgeInsets.only(top: 10.0),
+              child: showCompareText
+                  ? Text(
+                      compareText,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        fontSize: 37.0,
+                        color: Color(0xff757575),
+                      ),
+                    )
+                  : null),
+          Padding(
+            padding: const EdgeInsets.only(top: 50.0, left: 10.0, right: 10.0),
+            child: Container(
+              width: 350,
+              height: 270,
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  side: const BorderSide(color: Colors.white70, width: 1),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Center(
+                      child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.only(top: 20.0),
+                        child: Text(
+                          tryText,
+                          style: const TextStyle(
+                              color: Color(0xff9E9E9E), fontSize: 40.0),
                         ),
-                      )
-                    : null),
-            Padding(
-              padding: const EdgeInsets.only(top: 50.0),
-              child: Container(
-                width: 350,
-                height: 270,
-                child: Card(
-                  shape: RoundedRectangleBorder(
-                    side: const BorderSide(color: Colors.white70, width: 1),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Center(
-                        child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.only(top: 20.0),
-                          child: Text(
-                            tryText,
-                            style: const TextStyle(
-                                color: Color(0xff9E9E9E), fontSize: 40.0),
-                          ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            top: 10.0, right: 15.0, left: 15.0),
+                        child: TextField(
+                          controller: numberController,
+                          style: TextStyle(fontSize: 25.0),
+                          keyboardType:
+                              const TextInputType.numberWithOptions(),
+                          decoration: InputDecoration(
+                              hintText: 'Enter a number: ',
+                              hintStyle: TextStyle(fontSize: 25.0),
+                              errorText: errorText,
+                              errorStyle: TextStyle(fontSize: 16.0),
+                              focusedBorder: const OutlineInputBorder(
+                                  borderSide:
+                                      BorderSide(color: Colors.grey))),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                              top: 10.0, right: 15.0, left: 15.0),
-                          child: TextField(
-                            controller: numberController,
-                            style: TextStyle(fontSize: 25.0),
-                            keyboardType:
-                                const TextInputType.numberWithOptions(),
-                            decoration: InputDecoration(
-                                hintText: 'Enter a number: ',
-                                hintStyle: TextStyle(fontSize: 25.0),
-                                errorText: errorText,
-                                errorStyle: TextStyle(fontSize: 16.0),
-                                focusedBorder: const OutlineInputBorder(
-                                    borderSide:
-                                        BorderSide(color: Colors.grey))),
-                          ),
-                        ),
-                        Padding(
-                          padding:
-                              const EdgeInsets.only(top: 35.0, bottom: 10.0),
-                          child: Container(
-                            width: 120,
-                            height: 50,
-                            child: ElevatedButton(
-                              style: ButtonStyle(
-                                  backgroundColor: MaterialStateProperty.all(
-                                      Color(0xff3d9b9b))),
-                              onPressed: buttonPressed,
-                              child: Text(
-                                buttonText,
-                                style: TextStyle(
-                                  fontSize: 22.0,
-                                ),
+                      ),
+                      Padding(
+                        padding:
+                            const EdgeInsets.only(top: 35.0, bottom: 10.0),
+                        child: Container(
+                          width: 120,
+                          height: 50,
+                          child: ElevatedButton(
+                            style: ButtonStyle(
+                                backgroundColor: MaterialStateProperty.all(
+                                    Color(0xff3d9b9b))),
+                            onPressed: buttonPressed,
+                            child: Text(
+                              buttonText,
+                              style: TextStyle(
+                                fontSize: 22.0,
                               ),
                             ),
                           ),
-                        )
-                      ],
-                    )
+                        ),
+                      )
+                    ],
                   )
-                ),
+                )
               ),
-            )
-          ],
-        ),
+            ),
+          )
+        ],
       ),
     );
   }
