@@ -21,7 +21,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  String guessText = "I'm thinking of a number between 1 and 100";
+  final String guessText = "I'm thinking of a number between 1 and 100";
   final String turnText = "It\'s your turn to guess my number";
   final String tryText = "Try a number!";
 
