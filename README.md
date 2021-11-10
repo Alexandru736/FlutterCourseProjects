@@ -4,3 +4,4 @@ GitHub repository to store the homeworks and projects done during the Google Flu
 
 Homeworks included here are:
 * Homework1
+* Homework2
