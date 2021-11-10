@@ -1,14 +1,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:weekly_homeworks/WeeklyHomeworks/homework1.dart';
+import 'package:weekly_homeworks/WeeklyHomeworks/Homework1/homework1.dart';
+import 'package:weekly_homeworks/WeeklyHomeworks/Homework2/homework2.dart';
 
 import 'package:weekly_homeworks/main.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const HomeWork1());
+    await tester.pumpWidget(const HomeWork2());
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
