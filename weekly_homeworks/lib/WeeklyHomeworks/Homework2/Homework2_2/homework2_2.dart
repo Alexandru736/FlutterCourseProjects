@@ -1,13 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'dart:math';
 
-class Homework2_2 extends StatelessWidget {
-  const Homework2_2({Key? key}) : super(key: key);
+class Homework2Number2 extends StatelessWidget {
+  const Homework2Number2({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Number Shapes',
       home: Homework(),
     );
@@ -27,44 +26,47 @@ class _HomeworkState extends State<Homework> {
       'triangular';
 
   TextEditingController controller = TextEditingController();
-  List<String> listOfMessages = [
-    "is neither TRIANGULAR or SQUARE",
-    "is SQUARE",
-    "is TRIANGULAR",
-    "is both SQUARE or TRIANGULAR"
+  List<String> listOfMessages = <String>[
+    'is neither TRIANGULAR or SQUARE',
+    'is SQUARE',
+    'is TRIANGULAR',
+    'is both SQUARE or TRIANGULAR'
   ];
   String? errorText;
+  final TextInputType keyboardType =
+      TextInputType.number;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
+        title: const Center(
           child: Text('Number Shapes'),
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: onPressed,
-        child: Icon(Icons.done),
+        child: const Icon(Icons.done),
       ),
       body: Column(
         children: <Widget>[
           Padding(
-            padding: EdgeInsets.only(top: 15.0, left: 10.0, right: 5.0),
+            padding: const EdgeInsets.only(top: 15.0, left: 10.0, right: 5.0),
             child: Text(
               inputText,
-              style: TextStyle(fontSize: 20.0),
+              style: const TextStyle(fontSize: 20.0),
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 25.0, left: 10.0, right: 10.0),
+            padding: const EdgeInsets.only(top: 25.0, left: 10.0, right: 10.0),
             child: TextField(
               controller: controller,
               decoration: InputDecoration(
                 errorText: errorText,
                 hintText: 'Type a number',
               ),
-              keyboardType: TextInputType.numberWithOptions(decimal: false),
+              keyboardType:
+                  keyboardType,
             ),
           ),
         ],
@@ -73,7 +75,7 @@ class _HomeworkState extends State<Homework> {
   }
 
   void onPressed() {
-    int? textFieldToInt = int.tryParse(controller.value.text);
+    final int? textFieldToInt = int.tryParse(controller.value.text);
 
     if (textFieldToInt != null) {
       setState(() {
@@ -91,7 +93,7 @@ class _HomeworkState extends State<Homework> {
       controller.clear();
     } else {
       setState(() {
-        errorText = "Please type a number";
+        errorText = 'Please type a number';
       });
     }
   }
@@ -115,11 +117,11 @@ class _HomeworkState extends State<Homework> {
   }
 
   void resultAlertDialog(BuildContext context, int number, String text) {
-    showDialog(
+    showDialog<void>(
         context: context,
         builder: (BuildContext context) => AlertDialog(
               title: Text('$number'),
-              content: Text('Number $number ' + text),
+              content: Text('Number $number $text'),
             ));
   }
 }

@@ -21,9 +21,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  late TextEditingController _textFieldController = new TextEditingController();
-  String? convertedSum = "";
-  String? errorText = null;
+  final TextEditingController _textFieldController = TextEditingController();
+  String? convertedSum = '';
+  String? errorText;
 
 
   @override
@@ -35,60 +35,57 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       body: SingleChildScrollView(
-        child: Container(
-          child: Center(
-            child: Column(
-              children: <Widget>[
-                Image.network(
-                    'https://s.iw.ro/gateway/g/ZmlsZVNvdXJjZT1odHRwJTNBJTJGJTJG/c3RvcmFnZTA1dHJhbnNjb2Rlci5yY3Mt/cmRzLnJvJTJGc3RvcmFnZSUyRjIwMTUl/MkYwNyUyRjIzJTJGNDgxNDY4XzQ4MTQ2/OF9jdXJzX3NjaGltYl92YWx1dGFyX2xl/aV9ldXJvXy1fbWVkaWFmYXguanBnJnc9/NzgwJmg9NDQwJmhhc2g9YjY1MTE3MGU3ZTdkMmIwNmU4Yjc3YjVkNmYyNzVkMTY=.thumb.jpg'),
-                Padding(
-                  padding: const EdgeInsets.only(top: 15.0),
-                  child: Container(
-                    width: 350,
-                    child: TextField(
-                      keyboardType: const TextInputType.numberWithOptions(
-                          signed: false,
-                          decimal: true
-                      ),
-
-                      style: TextStyle(fontSize: 25),
-                      controller: _textFieldController,
-                      decoration: InputDecoration(
-                        errorText: errorText,
-                        hintText: 'Enter the amount in EURO',
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Colors.blue
-                            )
-                        ),
-                      ),
+        child: Center(
+          child: Column(
+            children: <Widget>[
+              Image.network(
+                  'https://s.iw.ro/gateway/g/ZmlsZVNvdXJjZT1odHRwJTNBJTJGJTJG/c3RvcmFnZTA1dHJhbnNjb2Rlci5yY3Mt/cmRzLnJvJTJGc3RvcmFnZSUyRjIwMTUl/MkYwNyUyRjIzJTJGNDgxNDY4XzQ4MTQ2/OF9jdXJzX3NjaGltYl92YWx1dGFyX2xl/aV9ldXJvXy1fbWVkaWFmYXguanBnJnc9/NzgwJmg9NDQwJmhhc2g9YjY1MTE3MGU3ZTdkMmIwNmU4Yjc3YjVkNmYyNzVkMTY=.thumb.jpg'),
+              Padding(
+                padding: const EdgeInsets.only(top: 15.0),
+                child: SizedBox(
+                  width: 350,
+                  child: TextField(
+                    keyboardType: const TextInputType.numberWithOptions(
+                        decimal: true
                     ),
 
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 20),
-                  child: TextButton(
-                    onPressed: () => {convertCurrency(_textFieldController)},
-                    child: Text(
-                      'Convert',
-                      style: TextStyle(fontSize: 30, color: Colors.white),
-                    ),
-                    style: TextButton.styleFrom(
-                      fixedSize: Size(150, 75),
-                      backgroundColor: Colors.blue,
+                    style: const TextStyle(fontSize: 25),
+                    controller: _textFieldController,
+                    decoration: InputDecoration(
+                      errorText: errorText,
+                      hintText: 'Enter the amount in EURO',
+                      focusedBorder: const OutlineInputBorder(
+                          borderSide: BorderSide(
+                              color: Colors.blue
+                          )
+                      ),
                     ),
                   ),
+
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 20),
-                  child: Text(
-                    convertedSum.toString() + ' LEI',
-                    style: TextStyle(fontSize: 40, color: Colors.grey),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 20),
+                child: TextButton(
+                  onPressed: () => convertCurrency(_textFieldController),
+                  style: TextButton.styleFrom(
+                    fixedSize: const Size(150, 75),
+                    backgroundColor: Colors.blue,
                   ),
-                )
-              ],
-            ),
+                  child: const Text(
+                    'Convert',
+                    style: TextStyle(fontSize: 30, color: Colors.white),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 20),
+                child: Text(
+                  '$convertedSum LEI',
+                  style: const TextStyle(fontSize: 40, color: Colors.grey),
+                ),
+              )
+            ],
           ),
         ),
       ),
