@@ -33,8 +33,7 @@ class _HomeworkState extends State<Homework> {
     'is both SQUARE or TRIANGULAR'
   ];
   String? errorText;
-  final TextInputType keyboardType =
-      TextInputType.number;
+  final TextInputType keyboardType = TextInputType.number;
 
   @override
   Widget build(BuildContext context) {
@@ -65,8 +64,7 @@ class _HomeworkState extends State<Homework> {
                 errorText: errorText,
                 hintText: 'Type a number',
               ),
-              keyboardType:
-                  keyboardType,
+              keyboardType: keyboardType,
             ),
           ),
         ],

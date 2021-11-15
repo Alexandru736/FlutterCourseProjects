@@ -25,7 +25,6 @@ class _HomePageState extends State<HomePage> {
   String? convertedSum = '';
   String? errorText;
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,23 +44,15 @@ class _HomePageState extends State<HomePage> {
                 child: SizedBox(
                   width: 350,
                   child: TextField(
-                    keyboardType: const TextInputType.numberWithOptions(
-                        decimal: true
-                    ),
-
+                    keyboardType: const TextInputType.numberWithOptions(decimal: true),
                     style: const TextStyle(fontSize: 25),
                     controller: _textFieldController,
                     decoration: InputDecoration(
                       errorText: errorText,
                       hintText: 'Enter the amount in EURO',
-                      focusedBorder: const OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: Colors.blue
-                          )
-                      ),
+                      focusedBorder: const OutlineInputBorder(borderSide: BorderSide(color: Colors.blue)),
                     ),
                   ),
-
                 ),
               ),
               Padding(
@@ -96,13 +87,13 @@ class _HomePageState extends State<HomePage> {
     final double? doubleValue;
     doubleValue = double.tryParse(_controller.value.text);
 
-    if(doubleValue == null) {
+    if (doubleValue == null) {
       setState(() {
         errorText = 'Please enter a number';
       });
     } else {
       setState(() {
-        if(doubleValue != null) {
+        if (doubleValue != null) {
           errorText = null;
           convertedSum = (doubleValue * 4.5).toStringAsFixed(2);
         }

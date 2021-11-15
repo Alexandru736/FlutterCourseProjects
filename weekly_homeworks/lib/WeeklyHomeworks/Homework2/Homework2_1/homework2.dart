@@ -35,8 +35,7 @@ class _HomePageState extends State<HomePage> {
   int randomGeneratedNumber = Random().nextInt(100) + 1;
   bool showCompareText = false;
 
-  final TextInputType keyboardType =
-      TextInputType.number;
+  final TextInputType keyboardType = TextInputType.number;
 
   @override
   Widget build(BuildContext context) {
@@ -98,13 +97,11 @@ class _HomePageState extends State<HomePage> {
                         padding: const EdgeInsets.only(top: 20.0),
                         child: Text(
                           tryText,
-                          style: const TextStyle(
-                              color: Color(0xff9E9E9E), fontSize: 40.0),
+                          style: const TextStyle(color: Color(0xff9E9E9E), fontSize: 40.0),
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(
-                            top: 10.0, right: 15.0, left: 15.0),
+                        padding: const EdgeInsets.only(top: 10.0, right: 15.0, left: 15.0),
                         child: TextField(
                           controller: numberController,
                           style: const TextStyle(fontSize: 25.0),
@@ -114,8 +111,7 @@ class _HomePageState extends State<HomePage> {
                               hintStyle: const TextStyle(fontSize: 25.0),
                               errorText: errorText,
                               errorStyle: const TextStyle(fontSize: 16.0),
-                              focusedBorder: const OutlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.grey))),
+                              focusedBorder: const OutlineInputBorder(borderSide: BorderSide(color: Colors.grey))),
                         ),
                       ),
                       Padding(
@@ -124,9 +120,7 @@ class _HomePageState extends State<HomePage> {
                           width: 120,
                           height: 50,
                           child: ElevatedButton(
-                            style: ButtonStyle(
-                                backgroundColor: MaterialStateProperty.all(
-                                    const Color(0xff3d9b9b))),
+                            style: ButtonStyle(backgroundColor: MaterialStateProperty.all(const Color(0xff3d9b9b))),
                             onPressed: buttonPressed,
                             child: Text(
                               buttonText,
@@ -176,8 +170,7 @@ class _HomePageState extends State<HomePage> {
                                 compareText = '';
                                 buttonText = 'Guess';
                                 showCompareText = false;
-                                randomGeneratedNumber =
-                                    Random().nextInt(100) + 1;
+                                randomGeneratedNumber = Random().nextInt(100) + 1;
                                 numberController.clear();
                               });
                               Navigator.pop(context, 'Try Again');
