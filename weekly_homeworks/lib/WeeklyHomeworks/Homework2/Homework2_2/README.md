@@ -4,12 +4,12 @@ For this project, I created an App to check if a typed is neither _square_ or _t
 <br>
 Here are a few screenshots of the functionality:
 <br><br>
-![img.png](Screenshots/img.png | heigth=200)
+<img src="Screenshots/img.png" alt="alt" width="200px">
 <br><br>
-![img.png](Screenshots/img2.png)
+<img src="Screenshots/img2.png" alt="alt" width="200px">
 <br><br>
-![img.png](Screenshots/img3.png)
+<img src="Screenshots/img3.png" alt="alt" width="200px">
 <br><br>
-![img.png](Screenshots/img4.png)
+<img src="Screenshots/img4.png" alt="alt" width="200px">
 <br><br>
-![img.png](Screenshots/img5.png)
+<img src="Screenshots/img5.png" alt="alt" width="200px">
